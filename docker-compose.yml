@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  openproject:
+    container_name: 'grafana'
+    image: 'grafana/grafana'
+    restart: 'always'
+    env_file:
+      - grafana.env
+    ports:
+      - '80:3000'
+    volumes:
+      - grafana:/var/lib/grafana
+    networks:
+      - grafana
+
+volumes:
+  grafana:
+    driver: 'local'
+
+networks:
+  grafana:
+    driver: 'bridge'

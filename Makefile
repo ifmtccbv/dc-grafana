@@ -1,4 +1,4 @@
-PROJECT := ifmt
+PROJECT := grafana
 
 restart: stop start
 
